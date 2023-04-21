@@ -122,7 +122,7 @@ const COLOR_CODES = {
 };
 
 /*definizione variabili per gestione timer countdown*/
-const TIME_LIMIT = 15;
+const TIME_LIMIT = 30;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = 0;
