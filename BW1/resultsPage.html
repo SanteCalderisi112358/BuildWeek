@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <title>Results Page</title>
+    
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<!-- body organizzato in: 1 header con image, 1 main -->
+<!-- il main presenta 1 container con all'interno 3 section -->
+<!-- ciascuna section è dedicata a porzioni di pagina specifiche -->
+
+<body>
+
+    <header id="header">
+            <img src="assets/img/epicode_logo.png" alt="logo">
+    </header>
+
+
+    <main>
+        
+        <div id="resultsPageContainer">
+
+            <section id="resultsPageTitle">
+                <h1>Results</h1>
+                <p>The summary of your answers:</p>
+            </section>
+
+            <section id="results">
+                <div id="left" class="resultsItem"></div>
+                <div id="center" class="resultsItem" ><canvas id="myCanvas"></canvas></div> 
+                <div id="right" class="resultsItem"></div>
+            </section>
+            
+
+            <section id="rateUs">
+                    <a href="feedbackPage.html"><button type="button" class="button">RATE US</button></a>
+            </section>
+
+        </div>
+    
+    </main>
+
+    <script src="assets/js/resultsPage.js"></script>
+</body>
+
+</html>

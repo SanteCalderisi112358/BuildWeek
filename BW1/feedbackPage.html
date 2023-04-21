@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<!-- body organizzato in: 1 header con image, 1 main -->
+<!-- il main presenta 1 container con all'interno 3 section -->
+<!-- ciascuna section è dedicata a porzioni di pagina specifiche -->
+
+<body>
+
+    <header id="header">
+        <img src="assets/img/epicode_logo.png" alt="logo">
+    </header>
+
+
+    <main>
+
+        <div id="feedbackPageContainer">
+
+            <section id="feedbackPageTitle">
+                <h1>Tell us how it's going</h1>
+            </section>
+
+            <section id="feedback">
+                <p>From 0 to 10, how likely are you to recommend EPICODE to a friend or a colleague?</p>
+                <ul class="rating">
+                    <li class="rating-item active" data-rate="1"></li>
+                    <li class="rating-item" data-rate="2"></li>
+                    <li class="rating-item" data-rate="3"></li>
+                    <li class="rating-item" data-rate="4"></li>
+                    <li class="rating-item" data-rate="5"></li>
+                    <li class="rating-item" data-rate="6"></li>
+                    <li class="rating-item" data-rate="7"></li>
+                    <li class="rating-item" data-rate="8"></li>
+                    <li class="rating-item" data-rate="9"></li>
+                    <li class="rating-item" data-rate="10"></li>
+                </ul>
+                <p>Leave us an open feedback about your experience so far</p>
+                <input type="text" placeholder="Write your comment here">
+                <hr>
+            </section>
+
+            <section id="moreInfo">
+                <button type="button">MORE INFO</button>
+            </section>
+
+        </div>
+
+    </main>
+
+    <script src="assets/js/feedbackPage.js"></script>
+</body>
+
+</html>

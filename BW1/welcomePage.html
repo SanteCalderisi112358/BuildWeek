@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<!-- body organizzato in: 1 header con image, 1 main -->
+<!-- il main presenta 1 container con all'interno 4 section -->
+<!-- ciascuna section è dedicata a porzioni di pagina specifiche -->
+
+<body>
+
+    <header id="header">
+            <img src="assets/img/epicode_logo.png" alt="logo">
+    </header>
+
+
+    <main>
+
+        <div id="welcomePageContainer">
+
+            <section id="welcomePageTitle">
+                <h1><span>Welcome to</span> your exam</h1>
+            </section>
+
+            <section id="welcomePageParagraph">
+                <h2>Instructions</h2>
+                <p>We don't expect most engineers to know the answers to all of these questions, so don't worry if you're unsure of a few of them.</p>
+            </section>
+
+            <section id="welcomePageList">
+                <ul>
+                    <li>Each question is <b>timed</b> and can only be <b>answered once</b>.</li>
+                    <li>Changing browser tab or opening other windows will <b>invalidate the question</b>.</li>
+                    <li>This exam will take approx.<b> 0-5 minutes</b>.</li>
+                </ul>
+            </section>
+
+            <section id="welcomePageCheckbox">
+                <input type="checkbox" id="customCheckbox" name="customCheckbox">
+                <label for="customCheckbox"><b>I promise to answer myself without help from anyone</b></label>
+                   <a href="questionPage.html"><button id="buttonWelcomePage"  type="button">PROCEED</button></a>
+            </section>
+
+        </div>
+    
+    </main>
+
+    <script src="assets/js/welcomePage.js"></script>
+</body>
+
+</html>

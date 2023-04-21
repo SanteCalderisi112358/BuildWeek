@@ -1,0 +1,406 @@
+/* css organizzato in parti dedicate: fonts, css reset, general, welcome, questions, results, feedback */
+
+/* - - - fonts import - - - */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;800&display=swap');
+
+
+/* - - - css reset - - - */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    /*line-height: 1.2em;*/
+}
+
+
+/* - - - general - - - */
+
+body {
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+header {
+    width: 85%;
+    margin: 3% auto;
+}
+
+img {
+    width: 140px;
+}
+
+main {
+    width: 85%;
+    margin: 0 auto;
+}
+
+
+/* - - - welcomePage - - - */
+
+#welcomePageTitle {
+    width: 30%;
+}
+
+#welcomePageTitle h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 60px;
+    line-height: 0.8em;
+    font-weight: 800;
+}
+
+#welcomePageTitle h1 span {
+    font-weight: 200;
+}
+
+#welcomePageParagraph h2 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    margin-bottom: 0.2em;
+    color: #C2128D;
+}
+
+#welcomePageParagraph p {
+    margin-top: 0;
+    width: 45%;
+    margin-bottom: 3em;
+}
+
+#welcomePageList ul {
+    margin-bottom: 5em;
+}
+
+label {
+    margin-right: 12em;
+}
+
+input {
+    cursor: pointer;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid white;
+    width: 17px;
+    height: 17px;
+}
+
+input:hover {
+    background-color: #cccccc;
+}
+
+input::before {
+    content: "\2713";
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    visibility: hidden;
+    color: white;
+}
+
+input:checked::before {
+    visibility: visible;
+}
+
+#buttonWelcomePage{
+    padding: 0.9em 3em;
+    font-size: 1.1em;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    font-weight: bolder;
+}
+
+.customActive{ /*classe aggiunta con js per gestire il button dopo checkBox*/
+        background-color : #00FFFF !important;
+        box-shadow: 0 0 5px 5px #01f9f981;
+        border: 1px solid #00FFFF;
+        color : black !important;
+        border : none !important;
+        cursor: pointer;
+}
+
+
+/* - - - questionPage - - - */
+
+#questionPageHeader { /*header modificato rispetto ad header generale per ospitare il timer*/
+    width: 85%;
+    margin: 3% auto 3% auto;
+}
+
+#questionPageContainer {
+    text-align: center;
+}
+
+#questionPageTitle {
+    width: 60%;
+    margin:0 auto;
+}
+
+#questionPageTitle h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 30px;
+    line-height: 0.8em;
+    font-weight: 800;
+    line-height: 1em;
+    margin-bottom: 1.5em;
+}
+
+#questionPageAnswers {
+    margin-bottom: 3em;
+}
+
+.answerButton {
+    width: 30%;
+    padding: 2%;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.091);
+    color: white;
+    box-shadow: 0px -2px 2px 0px white;
+    margin: 1% 2% 1% 2%;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+.answerButton:hover {
+    background-color: #C2128D;
+    cursor: pointer;
+}
+
+#questionPageCounter h1 {
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+#questionPageCounter span {
+    color: #C2128D;
+}
+
+
+/* - - - questionPage timer - - - */
+
+.base-timer {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+  
+.base-timer__circle {
+    fill: none;
+    stroke: none;
+}
+  
+.base-timer__path-elapsed {
+    stroke-width: 10px;
+    stroke: lightgrey;
+}
+  
+.base-timer__path-remaining {
+    stroke-width: 10px;
+    transform: rotate(90deg);
+    transform-origin: center;
+    transition: 1s linear all;
+    fill-rule: nonzero;
+    stroke: currentColor;
+}
+  
+.base-timer__path-remaining.green {
+    color: #00FFFF;
+}
+  
+.base-timer__path-remaining.orange {
+    color: orange;
+}
+  
+.base-timer__path-remaining.red {
+    color: red;
+}
+  
+.base-timer__label {
+    position: absolute;
+    width: 150px;
+    top: 0;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    padding-top: 40px;
+    text-align: center;
+}
+
+#app{
+    margin-left: 80%;
+    width: 10px;
+}
+
+.secondsFont {
+    font-size: 30px;
+    display:grid;
+    text-align: center;
+}
+
+/* - - - resultsPage - - - */
+
+#resultsPageContainer {
+    text-align: center;
+}
+
+#resultsPageTitle {
+    width: 50%;
+    margin:0 auto;
+}
+
+#resultsPageTitle h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 50px;
+    line-height: 0.8em;
+    font-weight: 800;
+    line-height: 1em;
+    margin-bottom: 0.1em;
+}
+
+#resultsPageTitle p {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+#left, #center, #right {
+    display: inline-block;
+    font-family: 'Outfit', sans-serif;
+}
+
+#center {
+    width: 28%;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+#rateUs button {
+    padding: 0.9em 3em;
+    font-size: 1.1em;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    font-weight: bolder;
+}
+
+#rateUs button:hover {
+        background-color : #00FFFF;
+        box-shadow: 0 0 5px 5px #01f9f981;
+        color: black;
+        border: 1px solid #00FFFF;
+        border : none;
+        cursor: pointer;
+}
+
+
+/* - - - feedbackPage - - - */
+
+#feedbackPageContainer {
+    text-align: center;
+}
+
+#feedbackPageTitle {
+    width: 50%;
+    margin: 0 auto;
+}
+
+#feedbackPageTitle h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 40px;
+    line-height: 0.8em;
+    font-weight: 800;
+    line-height: 1em;
+    margin-bottom: 0.1em;
+}
+
+#feedback {
+    margin: 0 auto;
+}
+
+#feedback p {
+    font-size: 1.2em;
+    margin-bottom: 2em;
+}
+
+#feedback input {
+    width: 58%;
+    margin-bottom: 0.5em;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1em;
+    outline: none;
+}
+
+hr {
+    border-color: #C2128D;
+    margin-bottom: 3em;
+    margin-top: 0;
+    width: 63%;
+}
+
+#moreInfo button {
+    padding: 0.9em 3em;
+    font-size: 1.1em;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    font-weight: bolder;
+}
+
+#moreInfo button:hover {
+        background-color : #00FFFF;
+        box-shadow: 0 0 5px 5px #01f9f981;
+        color: black;
+        border: 1px solid #00FFFF;
+        border : none;
+        cursor: pointer;
+}
+
+/* - - - feedbackPage rating - - - */
+
+.rating {
+    display: flex;
+    padding: 0;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.rating li {
+    overflow: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    list-style-type: none
+}
+
+.rating-item {
+    cursor: pointer;
+    font-size: 3em;
+    color: rgb(0, 255, 255);
+}
+
+/* riempie tutte le stelle */
+.rating-item::before {
+    content: "\2605";
+}
+
+/* riempie tutte le stelle fino alla selezionata (compresa) */
+.rating-item.active~.rating-item::before {
+    content: "\2606";
+}
+
+/* riempie tutte le stelle con hover */
+.rating:hover .rating-item::before {/*da verificare*/
+    content: "\2605";
+}
+
+/* riempie tutte le stelle fino alla selezionata (compresa) con hover */
+.rating-item:hover~.rating-item::before {
+    content: "\2606";
+}
