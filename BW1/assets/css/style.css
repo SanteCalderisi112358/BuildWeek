@@ -1,13 +1,11 @@
-/* css organizzato in parti dedicate: fonts, css reset, general, welcome, questions, results, feedback */
+/* css organizzato in parti dedicate: css reset, general, welcome, questions, results, feedback */
 
-/* - - - fonts import - - - */
+/* - - - css reset - - - */
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;800&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;800&display=swap');
 
-
-/* - - - css reset - - - */
 
 html, body {
     margin: 0;
@@ -15,9 +13,8 @@ html, body {
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
     font-size: 16px;
-    /*line-height: 1.2em;*/
+    
 }
-
 
 /* - - - general - - - */
 
@@ -116,6 +113,8 @@ input:checked::before {
     font-weight: bolder;
 }
 
+
+
 .customActive{ /*classe aggiunta con js per gestire il button dopo checkBox*/
         background-color : #00FFFF !important;
         box-shadow: 0 0 5px 5px #01f9f981;
@@ -152,7 +151,7 @@ input:checked::before {
 }
 
 #questionPageAnswers {
-    margin-bottom: 3em;
+    margin-bottom: 4em;
 }
 
 .answerButton {
@@ -164,7 +163,6 @@ input:checked::before {
     box-shadow: 0px -2px 2px 0px white;
     margin: 1% 2% 1% 2%;
     font-weight: bolder;
-    font-size: 15px;
 }
 
 .answerButton:hover {
@@ -202,6 +200,7 @@ input:checked::before {
   
 .base-timer__path-remaining {
     stroke-width: 10px;
+   /* stroke-linecap: round;*/
     transform: rotate(90deg);
     transform-origin: center;
     transition: 1s linear all;
@@ -224,6 +223,7 @@ input:checked::before {
 .base-timer__label {
     position: absolute;
     width: 150px;
+    /*height: 150px;*/
     top: 0;
     display: grid;
     align-items: center;
@@ -231,6 +231,11 @@ input:checked::before {
     font-size: 13px;
     padding-top: 40px;
     text-align: center;
+}
+
+.h1 {
+    font-family: "Lucida Console", Courier, monospace;
+    font-size: 3px;
 }
 
 #app{
@@ -269,15 +274,8 @@ input:checked::before {
     font-size: 1.5em;
 }
 
-#left, #center, #right {
+.resultsItem {
     display: inline-block;
-    font-family: 'Outfit', sans-serif;
-}
-
-#center {
-    width: 28%;
-    margin-left: 50px;
-    margin-right: 50px;
 }
 
 #rateUs button {
@@ -298,6 +296,16 @@ input:checked::before {
         cursor: pointer;
 }
 
+#left, #center, #right {
+    display: inline-block;
+    font-family: 'Outfit', sans-serif;
+}
+
+#center {
+    width: 28%;
+    margin-left: 50px;
+    margin-right: 50px;
+}
 
 /* - - - feedbackPage - - - */
 
@@ -374,8 +382,7 @@ hr {
 
 .rating li {
     overflow: auto;
-    padding-left: 25px;
-    padding-right: 25px;
+    margin: auto;
     list-style-type: none
 }
 

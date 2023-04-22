@@ -1,3 +1,6 @@
+
+
+
 /*****Dichiarazioni variabili:*****/
 
 /*Risposte che derivano dalla Question Page e prese dal localStorage*/
@@ -119,6 +122,8 @@ if (sbagliatePercentuale < 50) {
         },
         options: {
             borderAlign: 'inner',
+            
+
         },
         plugins: [{
             
@@ -176,12 +181,18 @@ if (sbagliatePercentuale < 50) {
                 ctx.fillText(text5, textX5, textY5);
                 ctx.save();
             },
-        }], 
+
+        }],
+
+
+        
     });
+
 }
 
+
 else {
-    document.getElementById('left').style.opacity = '0.8';
+    document.getElementById('right').style.opacity = '0.8';
     var myCanvas = document.getElementById('myCanvas').getContext('2d');
     var config = new Chart(myCanvas, {
         type: 'doughnut',
@@ -246,6 +257,17 @@ else {
                 ctx.textBaseline = "middle";
                 ctx.save();
             },
-        }],  
+
+        }],
+
+
+        
     });
 }
+
+
+
+
+
+
+
