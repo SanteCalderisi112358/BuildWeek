@@ -1,23 +1,18 @@
-
-
-
 /*****Dichiarazioni variabili:*****/
 
 /*Risposte che derivano dalla Question Page e prese dal localStorage*/
-
 var match = parseInt(localStorage.getItem('match'));
 var unmatch = parseInt(localStorage.getItem('unmatch'));
 
 /*Creazione Oggetto "answer" vuoto contenente risposte esatte "match" e quelle sbagliate "unmatch"*/
 var answer = {
-
     match: 0,
     unmatch:0 ,
 };
+
 /*Riempimento di answer con le risposte "match" e "unmatch"*/
 answer.match = match;
 answer.unmatch = unmatch;
-
 
 /*Creazione array "results" per la classe 'resultsItem' per gestire i tre div centrali*/
 var results = document.getElementsByClassName('resultsItem');
@@ -27,31 +22,21 @@ var totale = answer.match + answer.unmatch;
 var correttePercentuale = parseInt(((answer.match) / (totale) * 100).toFixed(1));
 var sbagliatePercentuale = parseInt(((answer.unmatch) / (totale) * 100).toFixed(1));
 
-
 /*Creazione dei paragrafi titoli, percentuale domande, e numero di risposte su 10 per i CORRECT e loro style*/
 var parCorrectTitle = document.createElement('p');
 parCorrectTitle.innerText = 'Correct';
 parCorrectTitle.style.fontSize = '3em';
 parCorrectTitle.style.margin = '0';
 parCorrectTitle.style.lineHeight = '1em';
-
-
 var parCorrectPer = document.createElement('p');
 parCorrectPer.innerText = correttePercentuale + '%';
 parCorrectPer.style.fontSize = '3em';
 parCorrectPer.style.margin = '0';
 parCorrectPer.style.fontWeight = 'bold';
-
-
 var parCorrectQue = document.createElement('p');
 parCorrectQue.innerText = answer.match + '/' + totale + ' questions';
 parCorrectQue.style.margin = '0';
 parCorrectQue.style.paddingBottom = '100px';
-
-
-
-
-
 
 /*Creazione dei paragrafi titoli, percentuale domande, e numero di risposte su 10 per i WRONG e loro style*/
 var parWrongTitle = document.createElement('p');
@@ -59,26 +44,19 @@ parWrongTitle.innerText = 'Wrong';
 parWrongTitle.style.fontSize = '3em';
 parWrongTitle.style.margin = '0';
 parWrongTitle.style.lineHeight = '1em';
-
-
-
 var parWrongPer = document.createElement('p');
 parWrongPer.innerText = sbagliatePercentuale + '%';
 parWrongPer.style.fontSize = '3em';
 parWrongPer.style.margin = '0';
 parWrongPer.style.fontWeight = 'bold';
-
-
 var parWrongQue = document.createElement('p');
 parWrongQue.innerText = answer.unmatch + '/' + totale + ' questions';
 parWrongQue.style.margin = '0';
 parWrongQue.style.paddingBottom = '100px';
 
-
 /*Variabili appoggio per fare alzare i testi al centro ciambella*/
 var correctEmpty = document.createElement('p');
 correctEmpty.innerText = "\n";
-
 var wrongEmpty = document.createElement('p');
 wrongEmpty.innerText = "\n";
 
@@ -97,11 +75,7 @@ results[2].appendChild(wrongEmpty);
 results[2].style.textAlign = 'right';
 
 
-
-
-
 /*****Creazione grafico a Ciambella tramite libreria ChartJS*****/
-
 
 if (sbagliatePercentuale < 50) {
     document.getElementById('right').style.opacity = '0.8';
@@ -122,8 +96,6 @@ if (sbagliatePercentuale < 50) {
         },
         options: {
             borderAlign: 'inner',
-            
-
         },
         plugins: [{
             
@@ -181,18 +153,12 @@ if (sbagliatePercentuale < 50) {
                 ctx.fillText(text5, textX5, textY5);
                 ctx.save();
             },
-
-        }],
-
-
-        
+        }], 
     });
-
 }
 
-
 else {
-    document.getElementById('right').style.opacity = '0.8';
+    document.getElementById('left').style.opacity = '0.8';
     var myCanvas = document.getElementById('myCanvas').getContext('2d');
     var config = new Chart(myCanvas, {
         type: 'doughnut',
@@ -257,17 +223,6 @@ else {
                 ctx.textBaseline = "middle";
                 ctx.save();
             },
-
-        }],
-
-
-        
+        }],  
     });
 }
-
-
-
-
-
-
-

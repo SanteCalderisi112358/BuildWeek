@@ -10,7 +10,6 @@ container.onclick = e => {
         items.forEach( /* reset classe attiva su stella */
             item => item.classList.remove('active')
         );
-        console.log(e.target.getAttribute("data-rate"));
         elClass.add('active'); /* aggiunge classe attiva su stella selezionata */
     }
 };

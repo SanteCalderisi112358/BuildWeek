@@ -102,10 +102,11 @@ const questions = [
 
 /* - - - js questionPage timer - - - */
 
+/*definizione angolo cambio colori*/
 const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 10;
 const ALERT_THRESHOLD = 5;
-
+/*definizione codici colori*/
 const COLOR_CODES = {
     info: {
         color: "green"
@@ -120,12 +121,13 @@ const COLOR_CODES = {
     }
 };
 
+/*definizione variabili per gestione timer countdown*/
 const TIME_LIMIT = 30;
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timerInterval = 0;
 let remainingPathColor = COLOR_CODES.info.color;
-
+/*inserimento in DOM del timer utilizzando svg w3.org*/
 document.getElementById("app").innerHTML = `
 <div class="base-timer">
   <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -144,25 +146,17 @@ document.getElementById("app").innerHTML = `
       ></path>
     </g>
   </svg>
-  <span id="base-timer-label" class="base-timer__label">${formatTime(
-    timeLeft
-)}</span>
+  <span id="base-timer-label" class="base-timer__label">${formatTime(timeLeft)}</span>
 </div>
 `;
 
 startTimer();
 
-/*function onTimesUp() {
-    clearInterval(timerInterval);
-}*/
-
 function startTimer() {
     timerInterval = setInterval(() => {
         timePassed = timePassed += 1;
         timeLeft = TIME_LIMIT - timePassed;
-        document.getElementById("base-timer-label").innerHTML = formatTime(
-            timeLeft
-        );
+        document.getElementById("base-timer-label").innerHTML = formatTime(timeLeft);
         setCircleDasharray();
         setRemainingPathColor(timeLeft);
         if (timeLeft === 0) {
@@ -173,62 +167,44 @@ function startTimer() {
     }, 1000);
 }
 
+/*funzione per gestione secondi*/
 function formatTime(time) {
-    const minutes = Math.floor(time / 60);
     let seconds = time % 60;
-    if (seconds < 10) {
-        seconds = `${seconds}`;
-    }
     return `SECONDS<span class="secondsFont">${seconds}</span>REMAINING`;
 }
-
+/*funzione per gestione cambio colori in base a timeLeft*/
 function setRemainingPathColor(timeLeft) {
     const { alert, warning, info } = COLOR_CODES;
     if (timeLeft <= alert.threshold) {
-        document
-            .getElementById("base-timer-path-remaining")
-            .classList.remove(warning.color, info.color);
-        document
-            .getElementById("base-timer-path-remaining")
-            .classList.add(alert.color);
+        document.getElementById("base-timer-path-remaining").classList.remove(warning.color, info.color);
+        document.getElementById("base-timer-path-remaining").classList.add(alert.color);
     } else if (timeLeft <= warning.threshold) {
-        document
-            .getElementById("base-timer-path-remaining")
-            .classList.remove(info.color, alert.color);
-        document
-            .getElementById("base-timer-path-remaining")
-            .classList.add(warning.color);
+        document.getElementById("base-timer-path-remaining").classList.remove(info.color, alert.color);
+        document.getElementById("base-timer-path-remaining").classList.add(warning.color);
     } else {
-        document
-          .getElementById("base-timer-path-remaining")
-          .classList.remove(alert.color, warning.color);
-        document
-          .getElementById("base-timer-path-remaining")
-          .classList.add(info.color);
+        document.getElementById("base-timer-path-remaining").classList.remove(alert.color, warning.color);
+        document.getElementById("base-timer-path-remaining").classList.add(info.color);
       }
 }
 
+/*funzioni per gestione barra countdown*/
 function calculateTimeFraction() {
     const rawTimeFraction = timeLeft / TIME_LIMIT;
     return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
 }
-
 function setCircleDasharray() {
     const circleDasharray = `${(calculateTimeFraction() * FULL_DASH_ARRAY).toFixed(0)} 283`;
-    document
-        .getElementById("base-timer-path-remaining")
-        .setAttribute("stroke-dasharray", circleDasharray);
+    document.getElementById("base-timer-path-remaining").setAttribute("stroke-dasharray", circleDasharray);
 }
 
 /* - - - js questionPage question & answers - - - */
 
-/* creazione array domande random */
+/* creazione array domande random e contatore domande*/
 
 var localStorage = 0;
 var match = 0;
 var unmatch = 0;
 var indexDomandaCorrente = 0;
-
 var sezioneDomande = document.querySelector("#questionPageTitle h1");
 var sezioneContatore = document.getElementById("contatoreDomande");
 var contatore = 1;
@@ -242,7 +218,6 @@ while (domandeRandom.length < 10) {
 }
 console.log(domandeRandom);
 
-
 /* creazione array risposte random in base a question corrente*/
 /* definizione variabile risposta corretta */
 /* scrittura nel DOM di domanda ed array risposte random (button) */
@@ -251,12 +226,9 @@ window.addEventListener("load", random);
 
 function random() {
     const domandaCorrente = domandeRandom[indexDomandaCorrente];
-    const allAnswers = domandaCorrente.incorrect_answers.concat(
-        domandaCorrente.correct_answer
-    );
-    const risposteRandom = allAnswers.sort(() => 0.5 - Math.random());
     const rispostaCorretta = domandaCorrente.correct_answer;
-
+    const allAnswers = domandaCorrente.incorrect_answers.concat(domandaCorrente.correct_answer);
+    const risposteRandom = allAnswers.sort(() => 0.5 - Math.random());
     sezioneDomande.innerText = domandaCorrente.question;
     const sezioneButton = document.getElementById("questionPageAnswers");
     sezioneButton.innerHTML = "";
@@ -266,14 +238,13 @@ function random() {
         button.setAttribute("class", "answerButton");
         const testoButton = document.createTextNode(risposteRandom[i]);
         button.appendChild(testoButton);
+        sezioneButton.appendChild(button);
         button.onclick = function (e) {
             nextQuestion();
             score(e, rispostaCorretta);
         };
-        sezioneButton.appendChild(button);
     }
 }
-
 
 /* funzione score (invocata nel for della funzione random) per gestione contatore risposte corrette/sbagliate (match/unmatch)) */
 
@@ -286,9 +257,7 @@ function score(event, rispostaCorretta) {
         unmatch++;
         localStorage.setItem("unmatch", unmatch);
     }
-    console.log(match);
-    console.log(unmatch);
-    console.log(rispostaCliccata)
+    console.log(match, unmatch, rispostaCliccata);
 }
 
 
@@ -297,22 +266,14 @@ function score(event, rispostaCorretta) {
 function nextQuestion() {
     if (indexDomandaCorrente < 9) {
         indexDomandaCorrente++;
-
-        document.getElementById("base-timer-path-remaining").classList.remove(COLOR_CODES.alert.color);
-
-        clearInterval(timerInterval);
-
-        /*onTimesUp();*/
-
-        timePassed = 0;
-        timeLeft = TIME_LIMIT + 1; /*da verificare */
-
-        startTimer()
-
         contatore++;
         sezioneContatore.innerText = contatore;
-        
+        document.getElementById("base-timer-path-remaining").classList.remove(COLOR_CODES.alert.color);
+        clearInterval(timerInterval);
+        timePassed = 0;
+        timeLeft = TIME_LIMIT;
         random();
+        startTimer();
     } else {
         localStorage.setItem("match", match);
         localStorage.setItem("unmatch", unmatch);
