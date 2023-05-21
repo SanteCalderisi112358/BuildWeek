@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Bootstrap demo</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+                crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+        <div class="container-fluid cerca">
+                <h1 class="text-light ms-3 mt-3">Cerca</h1>
+                <form class="d-flex" role="search">
+                        <input class="form-control me-3 ms-3" type="search" placeholder="Cerca" aria-label="Search">
+                        <button class="btn btn-cerca-mobile me-3" type="submit">Cerca</button>
+                </form>
+
+
+                <div class="row justify-content-around g-3 mt-3">
+                        <div class="col-5 image-container podcast">
+                                <div class="image-text pt-2">Podcast</div>
+                                <img src="./assets/imgs/search/image-2.jpg" alt="Imagen">
+                        </div>
+                        <div class="col-5 image-container forYou">
+                                <div class="image-text pt-2">Create per te</div>
+                                <img src="./assets/imgs/search/image-47.jpg" alt="Imagen">
+                        </div>
+                        <div class="col-5 image-container new">
+                                <div class="image-text pt-2">Nuove uscite</div>
+                                <img src="assets/imgs/search/image-42.png" alt="Imagen">
+                        </div>
+                        <div class="col-5 image-container pop">
+                                <div class="image-text pt-2">Pop</div>
+                                <img src="assets/imgs/search/image-49.jpg" alt="Imagen">
+                        </div>
+                        <div class="col-5 image-container hipHop">
+                                <div class="image-text pt-2">Hip-hop</div>
+                                <img src="assets/imgs/search/image-46.jpeg" alt="Imagen">
+                        </div>
+                        <div class="col-5 image-container dance">
+                                <div class="image-text pt-2">Dance/<br>Elettronica</div>
+                                <img src="assets/imgs/search/image-33.jpg" alt="Imagen">
+                        </div>
+                        <div class="col-5 image-container latina">
+                                <div class="image-text pt-2">Latina</div>
+                                <img src="assets/imgs/search/image-39.jpg" alt="Imagen">
+                        </div>
+                        <div class="col-5 image-container classifiche">
+                                <div class="image-text pt-2">Classifiche</div>
+                                <img src="assets/imgs/search/image-10.jpg" alt="Imagen">
+                        </div>
+                </div>
+                <div
+                        class="containerPlayer-mobile text-light p-3   d-md-none  fs-4 rounded d-flex flex-column justify-content-around">
+                        <div
+                                class="containerPlayer-mobile text-light p-3 mb-3  d-md-none  fs-4 rounded d-flex justify-content-around">
+                                <div>
+                                        <p id="imgDragon">Imagine Dragons - Mercury</p>
+                                </div>
+                                <div>
+                                        <i class="bi bi-speaker"></i>
+                                        <i class="bi bi-heart"></i>
+                                        <i class="bi bi-play-fill"></i>
+                                </div>
+                        </div>
+                        <div class="text-light sidebar-mobile">
+                                <div class="container-sidebar-mobile ">
+                                  <div class="d-flex flex-column align-items-center">
+                                    <a href="./home.html" style="text-decoration: none; color: white;">
+                                      <i class="bi bi-house-door me-2"></i>
+                                      <p class="m-0"><a style="text-decoration: none; font-size: 15px; color: white; cursor: pointer;" href="./home.html">Home</a> </p>
+                            
+                                    </a>
+                                  </div>
+                                  <div class="d-flex flex-column align-items-center">
+                                    <i id="cerca" id="faiComparireInput" onclick=" faiComparireInputFunction()" role="button"
+                                      class="bi bi-search me-2"></i>
+                                    <p id="sparire" class="m-0"><a href="./search.html" style="color: white; font-size: 15px;">Cerca</a></p>
+                                  </div>
+                            
+                                  <div class="d-flex flex-column align-items-center">
+                                    <i class="bi bi-collection"></i>
+                                    <p class="m-0" style="font-size: 15px;">La tua libreria</p>
+                                  </div>
+                                </div>
+                              </div>
+
+                </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+                crossorigin="anonymous"></script>
+</body>
+
+</html>

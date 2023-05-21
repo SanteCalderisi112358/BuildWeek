@@ -1,0 +1,945 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8em;
+    line-height: 1.2em;
+    background-color: #202020;
+}
+
+h1{
+    font-size: 50px;
+    
+}
+/* ____SIDEBAR SINISTRA____ */
+.cuore {
+    background: rgb(19, 0, 36);
+    background: linear-gradient(133deg, rgba(19, 0, 36, 1) 0%, rgba(89, 81, 160, 1) 24%, rgba(137, 111, 142, 1) 72%);
+}
+
+.ciao {
+    background: rgb(19, 0, 36);
+    background: linear-gradient(133deg, rgba(19, 0, 36, 1) 0%, rgba(81, 160, 99, 1) 24%, rgba(111, 142, 119, 1) 100%);
+}
+
+.sidebar {
+    background-color: #000000;
+}
+
+.scroll-bar {
+    width: 100%;
+    height: 400px;
+    overflow: auto;
+}
+
+.list-playlist {
+    list-style-type: none;
+}
+
+.list-playlist li {
+    padding: 0.3em;
+}
+
+.list-playlist li:hover{
+    background-color: #343232;
+    cursor: pointer;
+}
+
+/* sidebar attività amici */
+.sidebar-amici {
+    background-color: #000000;
+}
+
+.name-friend {
+    font-size: 1em;
+}
+
+.description-friend {
+    font-size: 0.7em;
+}
+
+.container-immagineAmici img {
+    width: 3em;
+}
+
+
+/*Download*/
+
+.bi-caret-down-fill{
+    opacity: 0;
+}
+.download_arrow{
+   opacity: 1;
+   font-size: 25px;
+   color: #1ED760;
+   text-shadow: 3px 3px 20px #1ED760;
+   animation: download_move 1000ms linear  infinite;
+
+}
+
+
+
+@keyframes download_move{
+    0%{
+        transform: translateY(0,0,0);
+        
+        
+    }
+    
+    100%{
+        transform: translateY(500px);
+       
+        opacity: 0;
+    }
+}
+
+
+/* ____MAIN CENTRALE____ */
+
+
+
+#toggle-btn {
+    display: inline-block;
+    width:40px;
+    height: 20px;
+    background-color: black;
+    
+    background-size: 100%;
+    border-radius: 24px;
+    position: relative;
+    transition: all ease-in-out .4s; /* animati tutti gli elementi (all), accelerazione ease-in-out, durata 0.4 secondi */
+    cursor: pointer;
+}
+#toggle-btn::before {
+    position: absolute;
+    width:10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    left:6px;
+    top:5px;
+    content: '';
+    transition: all ease-in-out .4s;
+    z-index: 10;
+}
+#toggle-btn.toggle-btn--dark {
+    background-color: #1ED760;
+}
+
+#toggle-btn.toggle-btn--dark::before {
+    left: 24px;
+}
+.light-mode {
+    background: linear-gradient(180deg, rgba(25, 85, 46, 0.8) 10%, rgba(18,18,18,0.4) 50%);
+    
+  }
+
+
+
+.chevron-icon {
+    background-color: #000000;
+    border-radius: 50%;
+    padding: 0.4em 0.5em 0.4em 0.5em;
+}
+
+/* altro di ciò che ti piace */
+.dropdown-toggle {
+    background-color: black;
+    border: none;
+    position: fixed;
+    top: 2%;
+    right: 18%;
+}
+
+.dropdown-toggle:hover{
+    background-color: rgba(111, 142, 119, 0.3);
+}
+
+.sezione-centrale h2 {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.sezione-centrale #homeAltroCheTiPiace {
+
+    margin-top: 20%;
+}
+
+#homeAltroCheTiPiace{
+    overflow: auto;
+}
+
+#homeAltroCheTiPiace .card-title {
+    font-size: 0.8em;
+    color: white;
+}
+
+#homeAltroCheTiPiaceCard a {
+    text-decoration: none;
+}
+
+#homeAltroCheTiPiace .card {
+    background-color: #343232;
+}
+
+.cardsAltroCheTiPiace a {
+
+    text-decoration: none;
+}
+
+.inputCompare {
+    display: block;
+}
+
+
+/*____ANNUNCI____*/
+.container-annunci {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+
+.image-annunci img {
+    width: 180px;
+}
+
+.image-annunci {
+    margin-right: 10px;
+    max-width: fit-content;
+    margin-right: 0;
+}
+
+
+.custom-button {
+    border-radius: 20px;
+    padding-left: 35px;
+    padding-right: 35px;
+    background-color: #1ed760;
+    transition: all 0.7s ease-in-out;
+    color: black;
+}
+
+.btn-play:hover {
+    transform: scale(1.1);
+    background-color: #1ed760;
+    color: black;
+}
+
+.btn-salva {
+    color: #1ed760;
+    background-color: black;
+    margin-left: 20px;
+}
+
+.btn-salva:hover {
+    background-color: #1ed760;
+    color: black;
+    transform: scale(1.1);
+
+}
+
+.btn-nascondi {
+    transition: all 0.7s ease-in-out;
+}
+
+.btn-nascondi:hover {
+    transform: scale(1.1);
+}
+
+.album-nascondi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.album-nascondi p {
+    margin: 0;
+}
+
+.nascondi-annunci {
+    background-color: #222222;
+    color: #606060;
+    padding: 3px 7px;
+    border-radius: 20px;
+    border: 1px solid black;
+    font-size: 12px;
+}
+
+/*___SEZIONE BUONASERA____*/
+.titolo-playlist {
+    padding-left: 12px;
+    font-weight: bold;
+}
+
+.card {
+    background-color: rgba(255, 250, 250, 0.133);
+    position: relative;
+    border: none;
+    color: white;
+    margin-right: 20px;
+    flex: 1 33.333%;
+}
+
+/*____ARTIST PAGE COVER___*/
+#titleArtist{
+    font-size: 77px;
+}
+/* ____PLAYER____*/
+
+/* canzone in riproduzione */
+
+
+#imgDragon{
+    font-size: 15px;
+}
+.container-song {
+    display: flex;
+    align-items: center;
+    
+}
+.container_icone_player{
+    width: 33.333%;
+}
+.container-imgPlayer {
+    --size: 4.5em;
+    flex-shrink: 0;
+    width: var(--size);
+    height: var(--size);
+}
+
+.container-imgPlayer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/* comandi player */
+.player {
+    background-color: #202020;
+    border-top: 1px solid #6c6b6b;
+}
+.color_heart{
+    color: red;
+}
+.container-player, .container-songPrincipale {
+    width: 33.333%;
+}
+
+.progress-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+}
+
+.progress-bar {
+    height: 4px;
+    border-radius: 10px;
+    width: 100%;
+    background-color: #ccc4;
+}
+
+.progress {
+    position: relative;
+    height: 100%;
+    width: 0%;
+    border-radius: 10px;
+    background-color: #999;
+}
+
+.progress-bar:hover .progress {
+    background-color: #1ed760;
+}
+
+.progress-bar:hover .progress::after {
+    content: "";
+    position: absolute;
+    --size: 1em;
+    width: 4.5em;
+    height: 4.5em;
+    right: 0;
+    border-radius: 50%;
+    background-color: #ddd;
+    transform: translate(50%, calc(2px - 50%));
+}
+
+.icon-play {
+    color: #222222;
+    background-color: white;
+    border-radius: 50%;
+    padding: 0.3em 0.4em 0.3em 0.4em;
+}
+
+.colorIconPlayer {
+    color: #1ed760;
+}
+
+/*Scroll infinito Traccia*/
+
+.container-scroll-text{
+    background-color: transparent;
+    max-width: 100px;
+    
+}
+.text-animation{
+    overflow: hidden;
+    white-space: nowrap;
+    
+    
+}
+
+.artistPlayer{
+    display: inline-block;
+
+    animation: scroll_animation 5s linear infinite;
+}
+
+@keyframes scroll_animation{
+    0%{
+        transform: translate3d(0,0,0);
+    }
+    
+    100%{
+        transform: translate3d(-100%,0,0);
+    }
+}
+/* barra volume */
+.volume-bar {
+    display: flex;
+    align-items: center;
+    gap: .7em;
+}
+
+.volume-bar .progress-bar {
+    width: 6em;
+}
+
+.volume-bar .progress-bar:hover .progress::after {
+    --size: .8em;
+}
+
+
+
+/*------------------------ALBUM PAGE-----------------------*/
+
+#cover {
+   
+    
+    margin: 0 auto;
+}
+
+.download_class{
+    color:rgb(30, 215, 96);
+}
+#p_Album {
+    font-size: 8px;
+}
+
+#title_Album {
+    font-size: 50px;
+    font-weight: 900;
+    margin-bottom: 0.5em;
+}
+
+#dettagli_Album {
+    font-size: 10px;
+
+}
+
+#cover_Album {
+    background-color: white;
+    width: 150px;
+    height: 150px;
+    
+    background-size: contain;
+}
+
+.chevron-icon:hover {
+    cursor: pointer;
+    background-color: rgba(111, 142, 119, 0.2);
+}
+
+#tracks_container{
+    width: 100%; background-color: rgb(18, 18, 18, 0.2); position: absolute; top: 20rem;
+}
+
+
+
+
+/*-----------------------PAGINA ARTISTA------------------------------*/
+.container-artista {
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.col-12 {
+    display: flex;
+    align-items: center;
+}
+
+.col-12 div {
+    margin-right: 10px;
+}
+
+.btn-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #1ed760;
+    color: black;
+    font-size: 50px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.7s ease-in-out;
+}
+
+.btn-circle:hover {
+    transform: scale(1.1);
+}
+
+.btn-follow {
+    font-size: 13px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid white;
+    padding: 3px 7px;
+    color: white;
+    transition: all 0.7s ease-in-out;
+
+}
+
+.btn-follow:hover {
+    cursor: pointer;
+    background-color: #1ed760;
+    border: #1ed760;
+    color: #000000;
+    transform: scale(1.1);
+}
+
+.play-follow div {
+    margin-right: 15px;
+}
+
+/*PAGINA SEARCH*/
+.btn-cerca-mobile{
+    background-color: transparent;
+    border: 1px solid #1ed760;
+    color: #1ed760;
+}
+.btn-cerca-mobile:hover{
+    background-color: #1ed760;
+    color: black;
+}
+
+.image-container{
+    width: 170px;
+    height: 100px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+.image-text{
+    position: absolute;
+    color: white;
+    font-weight: 600;
+}
+
+.image-container img {
+    width: 70px;
+    height: auto;
+    position: absolute;
+    transform: rotate(-15deg);
+    border-radius: 5px;
+    top: 35px;
+    left: 110px;
+}
+
+.podcast{
+    background-color: rgb(227, 70, 70);
+}
+.forYou{
+    background-color: rgb(49, 45, 117);
+}
+.new{
+    background-color: rgb(241, 20, 116);
+}
+.pop{
+    background-color: rgb(44, 159, 63);
+}
+.hipHop{
+    background-color: rgb(159, 80, 16);
+}
+.dance{
+    background-color: rgb(255, 119, 0);
+}
+.latina{
+    background-color: rgb(255, 0, 166);
+}
+.classifiche{
+    background-color: rgb(206, 132, 238);
+}
+
+
+/* MEDIA MOBILE */
+
+@media screen and (max-width: 481px) {
+
+    .dropdown {
+        display: none;
+    }
+
+    .chevron-icon {
+        display: none;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .sidebar-amici {
+        display: none;
+    }
+
+    .card-song {
+        display: none;
+    }
+
+    .sezione-saluto {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .sezione-saluto h5 {
+        font-size: 23px;
+    
+    }
+
+    .sezione-saluto i {
+        font-size: 23px;
+    }
+
+    .card {
+        display: none;
+    
+    }
+
+    
+    .card-mobile {
+       display: flex;
+       width: 50%;
+       background-color: rgba(255, 250, 250, 0.1);
+       border: none;
+       color: white;
+       margin-right: 20px;
+      
+    }
+
+    .container-sidebar-mobile {
+        display: flex;
+        justify-content: space-around;
+
+
+    }
+
+    .container-sidebar-mobile i {
+        font-size: 30px;
+
+    }
+
+
+    .container-annunci {
+        border-radius: 20px;
+    }
+
+    .button-play {
+        display: flex;
+    }
+
+    .player-container {
+        display: none;
+    }
+
+    .player-desktop{
+        display: none;
+    }
+
+    .containerPlayer-mobile{
+        display: none;
+        
+    }
+    .altroCheTiPiace{
+        display: none;
+    }
+    .bi-suit-heart-fill{
+        font-size: 25px;
+        color: #1ed760;
+    }
+    .bi-three-dots-vertical{
+        font-size: 25px;
+        color: #606060;
+    }
+    .brani{
+        font-size: 15px;
+        margin-top: 5px;
+    }
+    .bi-play-circle-fill{
+        font-size: 25px;
+    }
+    .icone-playlist{
+        padding-top: 20px;
+    }
+    .brani-icona{
+     margin-left:30px;
+   
+    }
+    .brani-icona p{
+        color: #606060;
+    }
+    .brani-icona i{
+        margin-left:20px
+       }
+       .text{
+        margin-left: 10px;
+       }
+       .text p{
+        font-size: 15px;
+       }
+}
+
+
+/* MEDIA MOBILE SOTTO I 480 */
+
+@media screen and (max-width: 320px) {
+   #salmo{
+    display: none;
+   }
+
+   
+
+
+    .dropdown {
+        display: none;
+    }
+
+    .chevron-icon {
+        display: none;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .sidebar-amici {
+        display: none;
+    }
+
+    .card-song {
+        display: none;
+    }
+
+    .sezione-saluto {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+
+    .sezione-saluto h5 {
+        font-size: 23px;
+    
+    }
+
+    .sezione-saluto i {
+        font-size: 23px;
+    }
+
+    .card {
+        display: none;
+    
+    }
+
+    
+    .card-mobile {
+       display: flex;
+       background-color: rgba(255, 250, 250, 0.1);
+       border: none;
+       color: white;
+      width: 100%;
+     
+      
+    }
+
+    .container-sidebar-mobile {
+        display: flex;
+        justify-content: space-around;
+
+
+    }
+
+    .container-sidebar-mobile i {
+        font-size: 30px;
+
+    }
+
+
+    .container-annunci {
+        border-radius: 20px;
+    }
+
+    .button-play {
+        display: flex;
+    }
+
+    .player-container {
+        display: none;
+    }
+
+    .player-desktop{
+        display: none;
+    }
+
+    .containerPlayer-mobile{
+        display: none;
+        
+    }
+    .altroCheTiPiace{
+        display: none;
+    }
+    .bi-suit-heart-fill{
+        font-size: 25px;
+        color: #1ed760;
+    }
+    .bi-three-dots-vertical{
+        font-size: 25px;
+        color: #606060;
+    }
+    .brani{
+        font-size: 15px;
+        margin-top: 5px;
+    }
+    .bi-play-circle-fill{
+        font-size: 25px;
+    }
+    .icone-playlist{
+        padding-top: 20px;
+    }
+    .brani-icona{
+     margin-left:30px;
+   
+    }
+    .brani-icona p{
+        color: #606060;
+    }
+    .brani-icona i{
+        margin-left:20px
+       }
+       
+       .text p{
+        font-size: 10px;
+       }
+
+       .card-text{
+        font-size: 10px;
+        
+       }
+}
+
+
+/* MEDIA DESKTOP */
+
+@media screen and (min-width: 481px) {
+    .sezione-saluto i {
+        display: none;
+    }
+    .sidebar-mobile {
+        display: none;
+    }
+    .card-song-mobile {
+        display: none;
+    }
+    .card-mobile {
+        display: none;
+    }
+    .musica-podcast{
+        display: none;
+    }
+    .player-mobile{
+        display: none;
+    }
+    .containerPlayer-mobile{
+        display: none;
+    }
+    .containerPlayer-mobile p{
+        display: none;
+    }
+    .containerPlayer-mobile i{
+        display: none;
+    }
+    .containerPlayer-mobile div{
+        display: none;
+    }
+}
+
+
+
+/*ALBUM MOBILE*/
+
+@media screen and (max-width: 1200px){
+    .sidebar-amici{
+        display: none;
+    }
+    .main-album{
+        width: 75%;
+    }
+    .dropdown-toggle {
+        background-color: black;
+        border: none;
+        position: fixed;
+        top: 2%;
+        right: 2%;
+        z-index: 10;
+    }
+
+    
+}
+
+@media screen and (max-width: 768px){
+    .sidebar{
+        display: none;
+    }
+    .main-album{
+        width: 100%;
+    }
+    #tracks_container{
+        width: 100%; background-color: rgb(18, 18, 18, 0.2); position: absolute; top: 27rem;
+    }
+    .container-img-album{
+        width: 100%;
+        justify-content: center;
+        margin-top: 0;
+        padding-top: 0;
+        height: 100%;
+    }
+    .artista-container{
+        width: 100%;
+    }
+
+}
+
+
