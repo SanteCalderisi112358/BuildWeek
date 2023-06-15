@@ -1,0 +1,27 @@
+.card-body{
+  height: 350px;
+  padding: 30px;
+  h3{
+    font-weight: 400;
+  }
+  .card-text{
+    font-size: small;
+  }
+}
+
+input,textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+input:hover, textarea:hover {
+  border-color: #007bff;
+  box-shadow: 0 0 5px #007bff;
+}
+
+input:focus, textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px #007bff;
+}

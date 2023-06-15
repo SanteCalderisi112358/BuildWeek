@@ -134,7 +134,7 @@ h1{
 }
 .light-mode {
     background: linear-gradient(180deg, rgba(25, 85, 46, 0.8) 10%, rgba(18,18,18,0.4) 50%);
-    
+    color: #1ED760;
   }
 
 
