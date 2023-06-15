@@ -1,9 +1,9 @@
 <section>
   <div class="d-flex justify-content-between container">
-    <div class="d-flex justify-content-center align-items-center">
+    <div class="d-flex justify-content-center align-items-end">
       <h1 class="text-center">I tuoi post</h1>
     </div>
-    <div>
+    <div id="title-form">
       <form class="d-flex flex-column" #form="ngForm" (submit)="addPost(form)">
         <label>A cosa stai pensando...?</label>
         <input type="text" class="mb-2" placeholder="Titolo" name="title" ngModel>
