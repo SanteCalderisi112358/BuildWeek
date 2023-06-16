@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   posts: Post[] = [];
   selectedPostId!: number
   @ViewChild('modal') modal!: ElementRef;
-
+  @ViewChild('think') think!: ElementRef;
   constructor(private postsSrv: PostsService) { }
 
   ngOnInit() {
@@ -29,12 +29,15 @@ export class HomeComponent implements OnInit {
           console.log(this.posts)
           form.resetForm();
         });
+
+        this.closeThinking()
       }
 
   removePost(id: number) {
     this.postsSrv.remove(id).subscribe(() => {
       this.posts = this.posts.filter(post => post.id !== id);
     });
+    console.log(this.posts)
   }
 
   openModal(id: number) {
@@ -52,6 +55,18 @@ export class HomeComponent implements OnInit {
     console.log(id)
   }
 
+  thinking(){
+    const modalEl = this.think.nativeElement;
+    modalEl.classList.add('show');
+    modalEl.style.display = 'block';
+
+  }
+
+  closeThinking(){
+    const modalEl = this.think.nativeElement;
+    modalEl.classList.remove('show');
+    modalEl.style.display = 'none';
+  }
   closeModal() {
 
     const modalEl = this.modal.nativeElement;
