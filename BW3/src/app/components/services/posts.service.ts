@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '../module/post.interface';
+import { Friend } from '../module/friend.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,10 @@ export class PostsService {
 
   modify(id:number, data:{title: string, body:string}){
     return this.http.put<Post>("https://jsonplaceholder.typicode.com/posts/"+id, data)
+  }
+
+  getFriend(){
+    return this.http.get<Friend[]>("https://jsonplaceholder.typicode.com/users")
   }
 
 }

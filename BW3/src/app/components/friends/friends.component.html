@@ -1,1 +1,36 @@
-<p>friends works!</p>
+<section class="container">
+  <h1 class="text-center">I tuoi amici</h1>
+  <h6>Clicca sopra i nomi per scoprire i dettagli</h6>
+  <div class="d-flex flex-wrap justify-content-center">
+    <div *ngFor="let friend of friends">
+      <div class="card m-3" style="width: 18rem;">
+        <ul class="list-group list-group-flush" (click)="openModal(friend.id)">
+          <li class="list-group-item">{{friend.name}}</li>
+
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div #modal class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title name-friend"></h5>
+          <a type="button" class="close btn btn-primary" data-dismiss="modal" aria-label="Close" (click)="closeModal()">
+            <span aria-hidden="true"><i class="bi bi-x"></i></span>
+          </a>
+        </div>
+        <div class="modal-body d-flex flex-column">
+          <p class="username-friend"></p>
+          <p class="modal-body email-friend p-0"></p>
+          <p class="modal-body phone-friend p-0 m-0"></p>
+          <p class="modal-body address-friend p-0"></p>
+          <p class="modal-body website-friend p-0"></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

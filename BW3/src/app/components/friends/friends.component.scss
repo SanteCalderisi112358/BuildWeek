@@ -1,0 +1,9 @@
+section{
+  margin: 100px 30px;
+  li{
+    &:hover{
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
+}

@@ -1,4 +1,6 @@
 export interface Friend {
+  website: string;
+  phone: string;
   id: number;
   name: string;
   username: string;
