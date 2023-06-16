@@ -1,36 +1,74 @@
-
-
-h1{
+h1 {
   margin-top: 100px;
 }
-span{
+
+span {
   text-decoration: underline;
   cursor: pointer;
 }
-.card-body{
-  height: 350px;
+
+.card-body {
+  height: 250px;
   padding: 30px;
-  h3{
+
+  h3 {
     font-weight: 400;
   }
-  .card-text{
+
+  .card-text {
     font-size: small;
   }
 }
 
-input,textarea {
+input,
+textarea {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   transition: all 0.3s ease;
 }
 
-input:hover, textarea:hover {
+input:hover,
+textarea:hover {
   border-color: #007bff;
   box-shadow: 0 0 5px #007bff;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   border-color: #007bff;
   box-shadow: 0 0 5px #007bff;
+}
+
+// #commenti-div {
+//   background-color: aquamarine;
+// }
+
+// #commenti {
+//   padding: 5px;
+//   list-style-type: none;
+//   border: 1px solid black;
+//   height: 40px;
+//   color: black;
+//   font-size: 10px;
+
+//   &:hover {
+//     background-color: #007bff;
+//   }
+
+//   span {
+//     font-weight: bold;
+
+//   }
+// }
+
+ul{
+  list-style-type: none;
+  li{
+    padding: 10px;
+    border-bottom: 1px solid black;
+    &:hover {
+         background-color: #007bff;
+       }
+  }
 }

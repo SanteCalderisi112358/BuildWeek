@@ -1,8 +1,7 @@
-
 <section>
   <div class="container">
-      <h1>I post del giorno</h1>
-      <h6 >A cosa stai pensando?Clicca <span (click)="thinking()">qui</span> per tenerci aggionati</h6>
+    <h1>I post del giorno</h1>
+    <h6>A cosa stai pensando?Clicca <span (click)="thinking()">qui</span> per tenerci aggionati</h6>
   </div>
 
   <div class="d-flex flex-wrap justify-content-center">
@@ -13,10 +12,35 @@
           <p class="card-text">{{ post.body }}</p>
         </div>
         <div class="container d-flex justify-content-between align-items-end mb-4">
-          <a class="btn btn-primary" type="button" (click)="removePost(post.id)"><i class="bi bi-trash"></i></a>
-          <a class="btn btn-primary" type="button" (click)="openModal(post.id)"><i class="bi bi-pencil-fill"></i></a>
+          <a class="btn btn-primary" type="button" (click)="removePost(post.id)" title="Elimina post"><i
+              class="bi bi-trash"></i></a>
+          <a class="btn btn-primary" type="button" (click)="openModal(post.id)" title="Modifica post"><i
+              class="bi bi-pencil-fill"></i></a>
         </div>
+        <div>
+          <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Leggi i commenti
+            </a>
+            <div class="container dropdown-menu p-0">
+              <div *ngFor="let comment of comments">
+                <ul id="commenti-div" class="m-0 p-0">
+                  <div *ngFor="let commentForId of comment">
+                    <li id="commenti" class="drolidown-item" *ngIf="commentForId.postId===post.id">"{{
+                      commentForId.name }}" <br>da <span>{{commentForId.email}}</span></li>
+                  </div>
 
+
+                </ul>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
@@ -28,20 +52,20 @@
 
       <div class="modal-body">
 
-          <form class="d-flex flex-column" #form="ngForm" (submit)="addPost(form)">
-            <div class="d-flex justify-content-end mb-2">
-              <a type="submit" class="close btn btn-primary" data-dismiss="modal" aria-label="Close"
-                (click)="closeThinking()">
-                <span aria-hidden="true"><i class="bi bi-x"></i></span>
-              </a>
-            </div>
+        <form class="d-flex flex-column" #form="ngForm" (submit)="addPost(form)">
+          <div class="d-flex justify-content-end mb-2">
+            <a type="submit" class="close btn btn-primary" data-dismiss="modal" aria-label="Close"
+              (click)="closeThinking()">
+              <span aria-hidden="true"><i class="bi bi-x"></i></span>
+            </a>
+          </div>
 
-            <input type="text" class="mb-2" placeholder="Titolo" name="title" ngModel required>
-            <textarea class="mb-2" rows="5" cols="10" placeholder="Testo" name="body" ngModel required></textarea>
-            <button type="submit" [disabled]="form.invalid"  class="btn btn-primary w-25">
-              <p class="m-0">Invia</p>
-            </button>
-          </form>
+          <input type="text" class="mb-2" placeholder="Titolo" name="title" ngModel required>
+          <textarea class="mb-2" rows="5" cols="10" placeholder="Testo" name="body" ngModel required></textarea>
+          <button type="submit" [disabled]="form.invalid" class="btn btn-primary w-25">
+            <p class="m-0">Invia</p>
+          </button>
+        </form>
 
       </div>
 
