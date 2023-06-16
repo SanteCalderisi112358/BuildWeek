@@ -12,14 +12,28 @@ import { NgForm } from '@angular/forms';
 export class HomeComponent implements OnInit {
   posts: Post[] = [];
   selectedPostId!: number
+  idPost!:number[]
+  comments: any[] = []
+  commentForIdPost: any[] = []
   @ViewChild('modal') modal!: ElementRef;
   @ViewChild('think') think!: ElementRef;
   constructor(private postsSrv: PostsService) { }
 
   ngOnInit() {
     this.postsSrv.getPosts().subscribe((posts: Post[]) => {
-      this.posts = posts;
-      console.log(this.posts);
+
+       this.posts = posts;
+      console.log(this.posts)
+      this.posts.forEach(post =>{
+      this.postsSrv.getCommentsByPostId((post.id)).subscribe((comment) =>{
+        this.comments.push(comment)
+
+
+
+      })
+
+      })
+     console.log(this.comments)
     });
   }
 

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Post } from '../module/post.interface';
 import { Friend } from '../module/friend.interface';
-
+import { Comment } from '../module/comment.interface';
 @Injectable({
   providedIn: 'root'
 })
@@ -29,6 +29,10 @@ export class PostsService {
 
   getFriend(){
     return this.http.get<Friend[]>("https://jsonplaceholder.typicode.com/users")
+  }
+
+  getCommentsByPostId(id:number){
+    return this.http.get<Comment[]>(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
   }
 
 }
